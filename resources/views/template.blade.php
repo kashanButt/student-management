@@ -11,7 +11,10 @@
 
 <body>
     <main>
-        @yield('content')
+        <x-navigation/>
+        <section class="content">
+            @yield('content')
+        </section>
     </main>
 </body>
 

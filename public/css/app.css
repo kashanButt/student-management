@@ -1,4 +1,88 @@
 
+
 * {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
 }
+main {
+    display: flex;
+}
+.navigation {
+    width: 15%;
+    height: 100%;
+    position: fixed;
+    padding: 2%;
+    background-color: rgba(0, 0, 0, 0.14);
+}
+nav li {
+    padding: 10px 0;
+}
+.content {
+    width: 78%;
+    padding: 2%;
+    position: absolute;
+    right: 0;
+}
+.form {
+    width: 99%;
+    padding: 0.5%;
+}
+.form h2 {
+    margin-bottom: 10px;
+}
+.form form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 10px;
+}
+.form form input {
+    padding: 8px;
+    outline: none;
+}
+.form form button {
+    padding: 10px;
+}
+.semesterResultTable table {
+    width: 100%;
+}
+.semesterResultTable table .head {
+    text-transform: uppercase;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.14);
+    display: flex;
+    justify-content: space-evenly;
+}
+.semesterResultTable table .data {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    display: table;
+    text-align: center;
+    justify-content: space-evenly;
+}
+.semesterResultTable table .data td {
+    width: 13.6%;
+}
+.semesterResultTable table .data button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.semesterResultTable table .data .update {
+    background: green;
+    color: white;
+    border: 1px solid green;
+}
+.semesterResultTable table .data .delete {
+    background: red;
+    color: white;
+    border: 1px solid red;
+    margin-bottom: 0;
+}
+
