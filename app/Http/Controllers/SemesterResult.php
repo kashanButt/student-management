@@ -27,15 +27,16 @@ class SemesterResult extends Controller
     }
     public function get()
     {
-        $data = DB::select('SELECT * FROM `semester_result`');
+        $data = DB::select('SELECT * FROM `semester_result` ORDER BY s_no DESC');
         return view('semester-result-table', ['data' => $data, 'title' => 'Student Semester Result']);
     }
-    public function single($student_id) {
-        $data = DB::select('SELECT * FROM `semester_result` WHERE student_id = ?', [$student_id]);
+    public function single($s_no) {
+        $data = DB::select('SELECT * FROM `semester_result` WHERE s_no = ?', [$s_no]);
         return view('update-semester-entry',['data' => $data, 'title' => 'Update Student Entry' ]);
     }
-    public function update(Request $request) {
+    public function update(Request $request, int $id) {
         
+        $sno = $id;
         $student_id = $request->student_id;
         $student_name = $request->student_name;
         $semester_id = $request->student_semester_id;
@@ -47,12 +48,12 @@ class SemesterResult extends Controller
         $marks_obtained = $request->student_marks_obtained;
         $grade = $request->student_grade;
         
-        DB::update('UPDATE `semester_result` SET `semester_id`= ?,`student_id`= ?,`student_name`= ?,`subject_id`= ?,`subject_name`= ?,`teacher_id`= ?,`teacher_name`= ?,`marks_obtained`= ?,`grade`= ? WHERE 1', [$semester_id, $student_id, $student_name, $subject_id, $subject_name, $teacher_id,$teacher_name, $marks_obtained, $grade]);
+        DB::update('UPDATE `semester_result` SET `semester_id`= ?,`semester_name` = ?,student_id`= ?,`student_name`= ?,`subject_id`= ?,`subject_name`= ?,`teacher_id`= ?,`teacher_name`= ?,`marks_obtained`= ?,`grade`= ? WHERE s_no = ?', [$semester_id, $semester_name, $student_id, $student_name, $subject_id, $subject_name, $teacher_id,$teacher_name, $marks_obtained, $grade, $sno]);
 
         return redirect('/student-semester-result');
     }
-    public function delete($student_id) {
-        DB::delete('DELETE FROM `semester_result` WHERE student_id = ?', [$student_id]);
+    public function delete($id) {
+        DB::delete('DELETE FROM `semester_result` WHERE s_no = ?', [$id]);
         return redirect('/student-semester-result');
     }
 }

@@ -2,7 +2,7 @@
 @section('content')
     <section class="form">
         Update Semester Entry
-        <form action="/update-semester-entry/{{$data[0]->student_id}}" method="post">
+        <form action="/update-semester-entry/{{$data[0]->s_no}}" method="post">
             @csrf
             <input type="text" name="student_id" class="student_id" placeholder="Student Id" value="{{$data[0]->student_id}}">
             <input type="text" name="student_name" class="student_name" placeholder="Student Name" value="{{$data[0]->student_name}}">
