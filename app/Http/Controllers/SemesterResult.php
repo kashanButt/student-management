@@ -20,7 +20,7 @@ class SemesterResult extends Controller
         $marks_obtained = $request->student_marks_obtained;
         $grade = $request->student_grade;
 
-        DB::insert('INSERT INTO `semester_result`(`semester_id`, `student_id`, `student_name`, `subject_id`, `subject_name`, `teacher_id`, `teacher_name`, `marks_obtained`, `grade`) VALUES (?,?,?,?,?,?,?,?,?)', [$semester_id, $student_id, $student_name, $subject_id, $subject_name, $teacher_id, $teacher_name, $marks_obtained, $grade]);
+        DB::insert('INSERT INTO `semester_result`(`semester_id`, `semester_name`, `student_id`, `student_name`, `subject_id`, `subject_name`, `teacher_id`, `teacher_name`, `marks_obtained`, `grade`) VALUES (?,?,?,?,?,?,?,?,?,?)', [$semester_id, $semester_name, $student_id, $student_name, $subject_id, $subject_name, $teacher_id, $teacher_name, $marks_obtained, $grade]);
 
         return redirect('/student-semester-entry');
 
@@ -35,8 +35,7 @@ class SemesterResult extends Controller
         return view('update-semester-entry',['data' => $data, 'title' => 'Update Student Entry' ]);
     }
     public function update(Request $request, int $id) {
-        
-        $sno = $id;
+    
         $student_id = $request->student_id;
         $student_name = $request->student_name;
         $semester_id = $request->student_semester_id;
