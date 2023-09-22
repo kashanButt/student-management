@@ -1,6 +1,6 @@
 @extends('template')
 @section('content')
-    <section class="semesterResultTable" CELLSPACING=0 cellpadding=0 border=0>
+    <section class="semesterResultTable">
         <table>
             <tr class="head">
                 <th>Semester Id</th>
@@ -14,15 +14,15 @@
             </tr>
             @foreach ($data as $item)
                 <tr class="data">
-                    <td>{{ $data[0]->semester_id }}</td>
-                    <td>{{ $data[0]->student_id }}</td>
-                    <td>{{ $data[0]->student_name }}</td>
-                    <td>{{ $data[0]->subject_id }}</td>
-                    <td>{{ $data[0]->teacher_id }}</td>
-                    <td>{{ $data[0]->marks_obtained }}</td>
-                    <td>{{ $data[0]->grade }}</td>
-                    <td><a href="/semester-entry/update/{{ $data[0]->student_id }}"><button class="update">Update</button></a><br>
-                        <a href="/semester-entry/delete/{{ $data[0]->student_id }}"><button class="delete">Delete</button></a>
+                    <td>{{ $item->semester_id }}</td>
+                    <td>{{ $item->student_id }}</td>
+                    <td>{{ $item->student_name }}</td>
+                    <td>{{ $item->subject_id }}</td>
+                    <td>{{ $item->teacher_id }}</td>
+                    <td>{{ $item->marks_obtained }}</td>
+                    <td>{{ $item->grade }}</td>
+                    <td><a href="/semester-entry/update/{{ $item->student_id }}"><button class="update">Update</button></a><br>
+                        <a href="/semester-entry/delete/{{ $item->student_id }}"><button class="delete">Delete</button></a>
                     </td>
                 </tr>
             @endforeach
