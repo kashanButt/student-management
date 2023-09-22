@@ -65,7 +65,7 @@ nav li {
     justify-content: space-evenly;
 }
 .semesterResultTable table .data td {
-    width: 13.6%;
+    width: 12.6%;
 }
 .semesterResultTable table .data button {
     width: 100%;
@@ -76,10 +76,12 @@ nav li {
     background: green;
     color: white;
     border: 1px solid green;
+    cursor: pointer;
 }
 .semesterResultTable table .data .delete {
     background: red;
     color: white;
     border: 1px solid red;
     margin-bottom: 0;
+    cursor: pointer;
 }

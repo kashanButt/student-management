@@ -48,7 +48,7 @@ class SemesterResult extends Controller
         $marks_obtained = $request->student_marks_obtained;
         $grade = $request->student_grade;
         
-        DB::update('UPDATE `semester_result` SET `semester_id`= ?,`semester_name` = ?,student_id`= ?,`student_name`= ?,`subject_id`= ?,`subject_name`= ?,`teacher_id`= ?,`teacher_name`= ?,`marks_obtained`= ?,`grade`= ? WHERE s_no = ?', [$semester_id, $semester_name, $student_id, $student_name, $subject_id, $subject_name, $teacher_id,$teacher_name, $marks_obtained, $grade, $sno]);
+        DB::update('UPDATE `semester_result` SET `semester_id`=?,`semester_name`=?,`student_id`=?,`student_name`=?,`subject_id`=?,`subject_name`=?,`teacher_id`=?,`teacher_name`=?,`marks_obtained`=?,`grade`=? WHERE s_no = ?', [$semester_id, $semester_name, $student_id, $student_name, $subject_id, $subject_name, $teacher_id,$teacher_name, $marks_obtained, $grade, $id]);
 
         return redirect('/student-semester-result');
     }

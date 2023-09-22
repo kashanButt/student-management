@@ -5,6 +5,7 @@
             <tr class="head">
                 <th>Student Id</th>
                 <th>Semester Id</th>
+                <th>Semester Name</th>
                 <th>Student Name</th>
                 <th>Subject Id</th>
                 <th>Teacher Id</th>
@@ -16,6 +17,7 @@
                 <tr class="data">
                     <td>{{ $item->student_id }}</td>
                     <td>{{ $item->semester_id }}</td>
+                    <td>{{ $item->semester_name }}</td>
                     <td>{{ $item->student_name }}</td>
                     <td>{{ $item->subject_id }}</td>
                     <td>{{ $item->teacher_id }}</td>
